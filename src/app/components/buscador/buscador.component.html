@@ -1,0 +1,13 @@
+<h1>Buscando a: <small>{{cadena}}</small> </h1>
+<hr>
+<div *ngIf="this.heroes.length == 0" class="alert alert-warning animated fadeIn">
+  <div class="row">
+    <div class="col-12">
+      <p class="m-2" >No se encontraron resultados de busqueda</p>
+    </div>
+  </div>
+</div>
+
+<div class="card-columns animated fadeIn">
+  <app-heroe-tarjeta [heroes]="h" [index]="h.idx" *ngFor="let h of heroes"></app-heroe-tarjeta>
+</div>

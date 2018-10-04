@@ -1,0 +1,27 @@
+
+  <h1 class="m-2 animated fadeIn fast"> {{_personaje.nombre | uppercase }} <small> ( {{_personaje.aparicion | date:'y' }} ) </small> </h1>
+  <hr>
+  <div class="container animated fadeIn">
+
+    <div class="row">
+
+      <div class="col-md-5">
+          <img class="img-fluid" [src]="_personaje.img" [alt]="_personaje.nombre">
+          <hr>
+          <a [routerLink]="['/heroes']" class="btn btn-info btn-block">Regresar</a>
+      </div>
+
+      <div class="col-md-7">
+
+        <h5>{{_personaje.nombre}}</h5>
+        <small> Primera aparicion fue en : {{_personaje.aparicion}}</small>
+        <hr>
+        <p>{{_personaje.bio}}</p>
+
+        <img  *ngIf="_personaje.casa == 'DC'" src="./assets/img/dc.png" class="img-fluid" [alt]="_personaje.casa">
+        <img  *ngIf="_personaje.casa == 'Marvel'" src="./assets/img/marvel.png" class="img-fluid" [alt]="_personaje.casa">
+      </div>
+
+    </div>
+
+  </div>
